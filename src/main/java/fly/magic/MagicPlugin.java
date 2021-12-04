@@ -22,6 +22,11 @@ public class MagicPlugin extends NewMod.ModExtension {
 
     @Override
     public void load() {
+        MagicAddonSetup.init();
+    }
+
+    @Override
+    public void onEnable() {
         Bukkit.getScheduler().runTaskTimer(this, () -> {
             for(Player player : Bukkit.getOnlinePlayers()) {
                 ItemStack helmet = player.getInventory().getHelmet();

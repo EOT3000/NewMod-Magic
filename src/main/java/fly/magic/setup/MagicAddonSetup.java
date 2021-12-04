@@ -22,10 +22,9 @@ import static org.bukkit.enchantments.Enchantment.*;
 import static org.bukkit.enchantments.Enchantment.THORNS;
 
 public class MagicAddonSetup {
+    public static void init() {
 
-    public static final ModItem ENCHANTMENT_REMOVER = new EnchantmentRemover();
-
-    public static final ModItem ENCHANTMENT_RUNE_COMBINER = new EnchantmentRuneCombiner();
+    }
 
     public static final ModItem BLANK_RUNE = new Rune("&0Blank Rune", "blank_rune", Color.fromRGB(0x000000), Rune.RuneType.OTHER);
     public static final ModItem BLOCK_RUNE = new ModItem(CLAY, "&7Block Rune", "block_rune", new ItemStack(STONE), BLANK_RUNE);
@@ -99,6 +98,10 @@ public class MagicAddonSetup {
     public static final ModItem RAINBOW_BOOTS = rainbowArmor(new ModItem(LEATHER_BOOTS, "&cR&6a&ei&an&bb&1o&dw Boots", "rainbow_boots"), Color.fromRGB(255, 0, 0), true);
 
     public static final ModItem NETHER_MAGIC_LUMP = new ModItem(GHAST_TEAR, "&4Magic Lump - Nether", "nether_magic_lump", 6, new ItemStack(NETHER_STAR));
+
+    public static final ModItem ENCHANTMENT_REMOVER = new EnchantmentRemover();
+
+    public static final ModItem ENCHANTMENT_RUNE_COMBINER = new EnchantmentRuneCombiner();
 
     public static ModItem leatherColor(ModItem stack, Color color, boolean unbreakable) {
         LeatherArmorMeta meta = (LeatherArmorMeta) stack.getItemMeta();
