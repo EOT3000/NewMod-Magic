@@ -18,16 +18,14 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 import java.util.HashMap;
 
 public class MagicPlugin extends NewMod.ModExtension {
-    private int count;
-
     @Override
     public void load() {
         MagicAddonSetup.init();
     }
 
     @Override
-    public void onEnable() {
-        Bukkit.getScheduler().runTaskTimer(this, () -> {
+    public void tick(int count) {
+        if(count % 3 == 0) {
             for(Player player : Bukkit.getOnlinePlayers()) {
                 ItemStack helmet = player.getInventory().getHelmet();
                 ItemStack chestplate = player.getInventory().getChestplate();
@@ -38,10 +36,8 @@ public class MagicPlugin extends NewMod.ModExtension {
                 updateArmor(player, chestplate);
                 updateArmor(player, leggings);
                 updateArmor(player, boots);
-
-                count++;
             }
-        }, 200, 2);
+        }
     }
 
     private void updateArmor(Player player, ItemStack stack) {
@@ -50,14 +46,6 @@ public class MagicPlugin extends NewMod.ModExtension {
         }
 
         ItemMeta meta = stack.getItemMeta();
-
-        if(count % 100 == 0) {
-            PlayerIntMapWrapper wrapper = meta.getPersistentDataContainer().getOrDefault(DatingMachine.PLAYERS_NAMESPACE, PlayerTimeDataType.PLAYER_TIME_TYPE, new PlayerIntMapWrapper(new HashMap<>()));
-
-            wrapper.add(player);
-
-            meta.getPersistentDataContainer().set(DatingMachine.PLAYERS_NAMESPACE, PlayerTimeDataType.PLAYER_TIME_TYPE, wrapper);
-        }
 
         if(BlockStorage.isSimilar(MagicAddonSetup.RAINBOW_HELMET, stack)) {
             ((LeatherArmorMeta) meta).setColor(nextColor(((LeatherArmorMeta) meta).getColor()));
