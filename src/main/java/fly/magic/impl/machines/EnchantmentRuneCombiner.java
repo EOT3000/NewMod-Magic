@@ -4,9 +4,9 @@ import fly.magic.bases.Rune;
 import fly.magic.bases.Runes;
 import fly.magic.impl.EnchantingRune;
 import fly.magic.setup.MagicAddonSetup;
+import fly.metals.setup.MetalsAddonSetup;
 import fly.newmod.NewMod;
 import fly.newmod.bases.inventory.ItemButtonBlock;
-import fly.newmod.setup.Setup;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.enchantments.Enchantment;
@@ -28,7 +28,7 @@ public class EnchantmentRuneCombiner extends ItemButtonBlock {
 
         recipe.shape("IRI", "CEC", "INI");
 
-        recipe.setIngredient('I', Setup.TITANIUM_INGOT);
+        recipe.setIngredient('I', MetalsAddonSetup.TITANIUM_INGOT);
         recipe.setIngredient('R', MagicAddonSetup.BLANK_RUNE);
         recipe.setIngredient('C', new ItemStack(Material.COPPER_INGOT));
         recipe.setIngredient('E', new ItemStack(Material.ENCHANTING_TABLE));

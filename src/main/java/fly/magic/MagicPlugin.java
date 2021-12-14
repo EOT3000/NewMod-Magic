@@ -1,21 +1,20 @@
 package fly.magic;
 
 import fly.magic.setup.MagicAddonSetup;
+import fly.metals.MetalsPlugin;
 import fly.newmod.NewMod;
-import fly.newmod.impl.machines.DatingMachine;
 import fly.newmod.setup.BlockStorage;
-import fly.newmod.setup.Setup;
 import fly.newmod.utils.ColorUtils;
-import fly.newmod.utils.PlayerIntMapWrapper;
-import fly.newmod.utils.PlayerTimeDataType;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MagicPlugin extends NewMod.ModExtension {
     @Override
@@ -87,5 +86,14 @@ public class MagicPlugin extends NewMod.ModExtension {
         }
 
         return color;
+    }
+
+    @Override
+    public List<NewMod.ModExtension> requirements() {
+        List<NewMod.ModExtension> r = new ArrayList<>();
+
+        r.add(JavaPlugin.getPlugin(MetalsPlugin.class));
+
+        return r;
     }
 }

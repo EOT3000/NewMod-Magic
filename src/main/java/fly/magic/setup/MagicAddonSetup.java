@@ -7,7 +7,6 @@ import fly.magic.impl.machines.EnchantmentRemover;
 import fly.magic.impl.machines.EnchantmentRuneCombiner;
 import fly.newmod.NewMod;
 import fly.newmod.bases.ModItem;
-import fly.newmod.setup.Setup;
 import fly.newmod.utils.Pair;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;

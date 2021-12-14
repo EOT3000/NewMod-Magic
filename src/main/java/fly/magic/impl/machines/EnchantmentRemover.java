@@ -2,10 +2,10 @@ package fly.magic.impl.machines;
 
 import fly.magic.bases.Runes;
 import fly.magic.setup.MagicAddonSetup;
+import fly.metals.setup.MetalsAddonSetup;
 import fly.newmod.NewMod;
 import fly.newmod.bases.ModItem;
 import fly.newmod.setup.BlockStorage;
-import fly.newmod.setup.Setup;
 import fly.newmod.utils.Pair;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -32,7 +32,7 @@ public class EnchantmentRemover extends ModItem implements Listener {
 
         recipe.shape("IGI", "CRP", "INI");
 
-        recipe.setIngredient('I', Setup.TITANIUM_INGOT);
+        recipe.setIngredient('I', MetalsAddonSetup.TITANIUM_INGOT);
         recipe.setIngredient('G', new ItemStack(Material.GOLD_INGOT));
         recipe.setIngredient('C', new ItemStack(Material.COPPER_INGOT));
         recipe.setIngredient('R', MagicAddonSetup.BLANK_RUNE);
@@ -83,7 +83,7 @@ public class EnchantmentRemover extends ModItem implements Listener {
     }
 
     @Override
-    public void tick(Location location) {
+    public void tick(Location location, int c) {
         Dropper dropper = ((Dropper) location.getBlock().getState());
         Inventory inventory = dropper.getInventory();
 
