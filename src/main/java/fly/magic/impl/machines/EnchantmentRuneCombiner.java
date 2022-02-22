@@ -1,4 +1,4 @@
-package fly.magic.impl.machines;
+/*package fly.magic.impl.machines;
 
 import fly.magic.bases.Rune;
 import fly.magic.bases.Runes;
@@ -115,4 +115,4 @@ public class EnchantmentRuneCombiner extends ItemButtonBlock {
 
         event.getInventory().setRepairCost(100);
     }
-}
+}*/

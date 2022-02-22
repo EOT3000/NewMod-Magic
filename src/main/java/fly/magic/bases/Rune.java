@@ -11,7 +11,7 @@ public class Rune extends ModItem {
     private RuneType runeType;
 
     public Rune(String name, String id, Color color, RuneType runeType) {
-        super(Material.FIREWORK_STAR, name, id);
+        super(Material.FIREWORK_STAR, name, color.asRGB(), id);
 
         FireworkEffectMeta meta = (FireworkEffectMeta) getItemMeta();
 

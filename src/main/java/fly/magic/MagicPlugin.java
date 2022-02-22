@@ -7,6 +7,7 @@ import fly.newmod.setup.BlockStorage;
 import fly.newmod.utils.ColorUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Color;
+import org.bukkit.WorldCreator;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -39,6 +40,11 @@ public class MagicPlugin extends NewMod.ModExtension {
         }
     }
 
+    @Override
+    public void onEnable() {
+        //Bukkit.createWorld(new WorldCreator("earth2"));
+    }
+
     private void updateArmor(Player player, ItemStack stack) {
         if(stack == null) {
             return;
@@ -50,7 +56,7 @@ public class MagicPlugin extends NewMod.ModExtension {
             ((LeatherArmorMeta) meta).setColor(nextColor(((LeatherArmorMeta) meta).getColor()));
         }
 
-        if(BlockStorage.isSimilar(MagicAddonSetup.RAINBOW_BOOTS, stack) || BlockStorage.isSimilar(MagicAddonSetup.RAINBOW_LEGGINGS, stack) || BlockStorage.isSimilar(MagicAddonSetup.RAINBOW_CHESPLATE, stack)) {
+        if(BlockStorage.isSimilar(MagicAddonSetup.RAINBOW_BOOTS, stack) || BlockStorage.isSimilar(MagicAddonSetup.RAINBOW_LEGGINGS, stack) || BlockStorage.isSimilar(MagicAddonSetup.RAINBOW_CHESTPLATE, stack)) {
             ItemStack h = player.getInventory().getHelmet();
 
             if(h != null && BlockStorage.isSimilar(MagicAddonSetup.RAINBOW_HELMET, h)) {
